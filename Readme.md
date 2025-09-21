@@ -1,42 +1,35 @@
-🏗 Airflow ETL Project – Sales Data Pipeline
+# Automated ETL Pipeline for Customer Sales Data 📊
 
-This is a fully local ETL pipeline using Apache Airflow that extracts, transforms, and loads sales data into a SQLite database.
+**Extract, Transform & Load with Airflow**
 
-##################################################################
-Project Overview
+Process customer sales data daily—compute key metrics, aggregate spend, and load into a **SQLite database**—fully automated with **Airflow** DAGs, logging, and retry mechanisms. ⚡️
 
-This project demonstrates a classic ETL workflow:
+---
 
-Extract – Read raw CSV file from data/.
+## Features
+- **Extract:** Reads raw sales CSV files and standardizes them for processing.
+- **Transform:** Computes order-level **total value** and aggregates customer spend.
+- **Load:** Inserts transformed data into a **SQLite database** for analytics.
+- **Airflow Orchestration:** DAGs with task dependencies, daily scheduling, retries, and monitoring.
+- **Modular & Maintainable:** Separate scripts for **extract**, **transform**, and **load**.
+- **Logging & Observability:** Tracks task execution, success/failure, and retries.
 
-Transform – Clean, enrich, and aggregate sales data with Pandas.
+---
 
-Load – Persist results into a SQLite database for analytics.
+## Tech Stack
+- **Python** (ETL scripts, data manipulation)
+- **Pandas**
+- **SQLite**
+- **Apache Airflow**
+- **BashOperator** (task execution)
+- **Logging**
 
-###########################################################################################
+---
 
-Project Structure
-
-airflow_etl_project/
-│
-├── dags/
-│   └── etl_sales_dag.py        # Airflow DAG definition
-│
-├── data/
-│   └── raw_sales.csv           # Sample raw sales data
-│
-├── scripts/
-│   ├── extract.py              # Extract task
-│   ├── transform.py            # Transform task
-│   └── load.py                 # Load task
-│
-├── output/                     # Pipeline outputs (created at runtime)
-│   ├── extracted.csv
-│   ├── processed_sales.csv
-│   └── sales.db
-│
-└── requirements.txt
-###########################################################################################
+## Quick Start 🚀
+1️⃣ **Place raw CSV**
+```bash
+data/raw_sales.csv
 
 Setup Instruction
 
